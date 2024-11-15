@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h1 style="justify-content: center;">Task Manager</h1>
+      <div class="header-buttons">
+        <button class="add-task-btn" id="show-add-task-form">Add Task</button>
+        <button class="settings-btn" id="show-settings-form">Settings</button>
+      </div>
+    </div>
+    
+    <!-- Task List -->
+    <div class="task-list">
+      <h2>Task List</h2>
+      <table id="task-table">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Tasks will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Add Task Form -->
+    <div class="add-task-form" id="add-task-form" style="display: none;">
+      <h2>Add Task</h2>
+      <form id="task-form">
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" required>
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" required>
+        <label for="priority">Priority:</label>
+        <select id="priority" required>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <label>Status:</label>
+        <input type="radio" id="status-completed" name="status" value="Completed"> Completed
+        <input type="radio" id="status-pending" name="status" value="Pending" checked> Pending
+        <button type="submit">Add Task</button>
+        <button type="button" id="cancel-task-form">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Settings Form -->
+    <div class="settings-form" id="settings-form" style="display: none;">
+      <h2>Settings</h2>
+      <label for="theme">Select Theme:</label>
+      <select id="theme" onchange="changeTheme()">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <button type="button" id="close-settings">Close</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Task Manager. All Rights Reserved.</p>
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>
